@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../../../core/services/data.service';
 import { AppUser } from '../../../core/models';
 
@@ -38,7 +39,23 @@ import { AppUser } from '../../../core/models';
   `]
 })
 export class UserSwitcherComponent {
-  constructor(public dataService: DataService) {}
+  constructor(public dataService: DataService, private router: Router) {}
+
+  private roleRouteMap: Record<string, string> = {
+    'USR-001': '/raise-indent',        // Indent Raiser -> Portal 1
+    'USR-002': '/design-head-approval', // Design Head -> Portal 2
+    'USR-003': '/coordinator-assignment', // Coordinator -> Portal 3
+    'USR-004': '/contract-team-member',   // CTM -> Portal 4
+    'USR-005': '/contract-head-approval', // CH -> Portal 5
+    'USR-006': '/cob-tracker',            // Management -> COB Tracker
+    'USR-007': '/deliverables-tracker',   // Design Team Reviewer
+    'USR-008': '/consultant-upload',      // External Consultant
+    'USR-009': '/approval-portals',       // MEP Head
+    'USR-010': '/approval-portals',       // Project Head
+    'USR-011': '/approval-portals',       // Liaisoning Head
+    'USR-012': '/design-dashboard',       // Managing Director
+    'USR-013': '/system-settings',        // System Admin
+  };
 
   switchUser(userId: string) {
     const users: Record<string, AppUser> = {
@@ -57,6 +74,13 @@ export class UserSwitcherComponent {
       'USR-013': { id: 'USR-013', name: 'Admin', role: 'ADMIN', email: 'admin@bagmane.com', portalAccess: ['portal-hub','system-settings'] },
     };
     const user = users[userId];
-    if (user) this.dataService.switchUser(user);
+    if (user) {
+      this.dataService.switchUser(user);
+      // Auto-navigate to the correct portal for this role
+      const route = this.roleRouteMap[userId];
+      if (route) {
+        this.router.navigate([route]);
+      }
+    }
   }
 }
