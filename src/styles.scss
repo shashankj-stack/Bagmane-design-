@@ -1122,3 +1122,276 @@ tbody td { padding: 10px 14px !important; }
 /* Sidebar nav scroll */
 .sidebar-nav::-webkit-scrollbar { width: 4px; }
 .sidebar-nav::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
+
+/* ════════════════════════════════════════════════════════
+   VIBRANT COLOR SYSTEM — Premium visual enhancement layer
+   Adds rich gradients, colorful accents, animated flourishes
+   ════════════════════════════════════════════════════════ */
+
+/* ── Core color ramp overrides ── */
+:root {
+  --c-blue:    #3b82f6;  --c-blue-bg:    #eff6ff;
+  --c-green:   #10b981;  --c-green-bg:   #ecfdf5;
+  --c-amber:   #f59e0b;  --c-amber-bg:   #fffbeb;
+  --c-red:     #ef4444;  --c-red-bg:     #fef2f2;
+  --c-purple:  #8b5cf6;  --c-purple-bg:  #f5f3ff;
+  --c-teal:    #14b8a6;  --c-teal-bg:    #f0fdfa;
+  --c-pink:    #ec4899;  --c-pink-bg:    #fdf2f8;
+  --c-orange:  #f97316;  --c-orange-bg:  #fff7ed;
+  --c-indigo:  #6366f1;  --c-indigo-bg:  #eef2ff;
+  --c-cyan:    #06b6d4;  --c-cyan-bg:    #ecfeff;
+  --c-lime:    #84cc16;  --c-lime-bg:    #f7fee7;
+  --c-slate:   #64748b;  --c-slate-bg:   #f1f5f9;
+}
+
+/* ── Background page gradient (subtle) ── */
+body {
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 30%, #fefce8 70%, #faf5ff 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* ── Colored stat card tops (rainbow) ── */
+.stats-row .stat-card:nth-child(1) {
+  border-top: 3px solid var(--c-blue) !important;
+  background: linear-gradient(180deg, #eff6ff, #fff 60%) !important;
+}
+.stats-row .stat-card:nth-child(2) {
+  border-top: 3px solid var(--c-amber) !important;
+  background: linear-gradient(180deg, #fffbeb, #fff 60%) !important;
+}
+.stats-row .stat-card:nth-child(3) {
+  border-top: 3px solid var(--c-green) !important;
+  background: linear-gradient(180deg, #ecfdf5, #fff 60%) !important;
+}
+.stats-row .stat-card:nth-child(4) {
+  border-top: 3px solid var(--c-purple) !important;
+  background: linear-gradient(180deg, #f5f3ff, #fff 60%) !important;
+}
+.stats-row .stat-card:nth-child(5) {
+  border-top: 3px solid var(--c-teal) !important;
+  background: linear-gradient(180deg, #f0fdfa, #fff 60%) !important;
+}
+.stats-row .stat-card:nth-child(6) {
+  border-top: 3px solid var(--c-orange) !important;
+  background: linear-gradient(180deg, #fff7ed, #fff 60%) !important;
+}
+
+/* ── KPI card color borders ── */
+.kpi-grid .kpi-card:nth-child(1) {
+  border-left: 4px solid var(--c-indigo) !important;
+  background: linear-gradient(135deg, #eef2ff, #fff 70%) !important;
+}
+.kpi-grid .kpi-card:nth-child(2) {
+  border-left: 4px solid var(--c-green) !important;
+  background: linear-gradient(135deg, #ecfdf5, #fff 70%) !important;
+}
+.kpi-grid .kpi-card:nth-child(3) {
+  border-left: 4px solid var(--c-red) !important;
+  background: linear-gradient(135deg, #fef2f2, #fff 70%) !important;
+}
+.kpi-grid .kpi-card:nth-child(4) {
+  border-left: 4px solid var(--c-purple) !important;
+  background: linear-gradient(135deg, #f5f3ff, #fff 70%) !important;
+}
+.kpi-grid .kpi-card:nth-child(5) {
+  border-left: 4px solid var(--c-teal) !important;
+  background: linear-gradient(135deg, #f0fdfa, #fff 70%) !important;
+}
+.kpi-grid .kpi-card:nth-child(6) {
+  border-left: 4px solid var(--c-amber) !important;
+  background: linear-gradient(135deg, #fffbeb, #fff 70%) !important;
+}
+
+/* ── Card color coding (alternating row rainbow) ── */
+.card-grid .card:nth-child(5n+1) { border-left: 3px solid var(--c-blue) !important; }
+.card-grid .card:nth-child(5n+2) { border-left: 3px solid var(--c-purple) !important; }
+.card-grid .card:nth-child(5n+3) { border-left: 3px solid var(--c-teal) !important; }
+.card-grid .card:nth-child(5n+4) { border-left: 3px solid var(--c-orange) !important; }
+.card-grid .card:nth-child(5n+5) { border-left: 3px solid var(--c-pink) !important; }
+
+/* ── Gradient buttons ── */
+.btn-accent {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b) !important;
+  color: #1a1a2e !important; border: none !important;
+  box-shadow: 0 2px 8px rgba(245,158,11,.3) !important;
+}
+.btn-accent:hover { background: linear-gradient(135deg, #fcd34d, #fbbf24) !important; box-shadow: 0 4px 16px rgba(245,158,11,.4) !important; }
+.btn-primary {
+  background: linear-gradient(135deg, #334155, #1e293b) !important;
+  border: none !important; box-shadow: 0 2px 8px rgba(15,23,42,.25) !important;
+}
+.btn-primary:hover { background: linear-gradient(135deg, #475569, #334155) !important; box-shadow: 0 4px 14px rgba(15,23,42,.35) !important; }
+.btn-success {
+  background: linear-gradient(135deg, #34d399, #10b981) !important;
+  border: none !important; box-shadow: 0 2px 8px rgba(16,185,129,.25) !important;
+}
+.btn-danger {
+  background: linear-gradient(135deg, #f87171, #ef4444) !important;
+  border: none !important; box-shadow: 0 2px 8px rgba(239,68,68,.25) !important;
+}
+
+/* ── Row striping rainbow in data tables ── */
+tbody tr:nth-child(odd) td { background: rgba(248,250,252,.5) !important; }
+tbody tr:hover td { background: rgba(245,158,11,.06) !important; }
+
+/* ── Sidebar vibrant ── */
+.sidebar {
+  background: linear-gradient(180deg, #0f172a 0%, #1a2744 50%, #162032 100%) !important;
+  border-right-color: rgba(255,255,255,.06) !important;
+}
+.sidebar-brand { border-bottom-color: rgba(255,255,255,.08) !important; }
+.sidebar-name { color: #f8fafc !important; }
+.nav-section-label { color: rgba(255,255,255,.35) !important; }
+.nav-item { color: rgba(255,255,255,.55) !important; border-radius: 8px !important; }
+.nav-item:hover { background: rgba(255,255,255,.06) !important; color: rgba(255,255,255,.9) !important; }
+.nav-item.active {
+  background: rgba(245,158,11,.15) !important;
+  color: #fbbf24 !important;
+  font-weight: 600 !important;
+  border-left: 3px solid #f59e0b !important;
+}
+.sidebar-footer { border-top-color: rgba(255,255,255,.08) !important; }
+.sidebar-avatar {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b) !important;
+  color: #1a1a2e !important; font-weight: 700 !important;
+}
+.sidebar-user-name { color: #f8fafc !important; }
+.sidebar-user-role { color: rgba(255,255,255,.4) !important; }
+
+/* ── Top bar polish ── */
+.topbar {
+  background: rgba(255,255,255,.85) !important;
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(0,0,0,.06) !important;
+}
+
+/* ── Badge color variety ── */
+.badge-info { background: #e0e7ff !important; color: #4338ca !important; }        /* indigo */
+.badge-primary { background: #dbeafe !important; color: #1d4ed8 !important; }       /* blue */
+.badge-light, .badge-neutral { background: #f1f5f9 !important; color: #475569 !important; }
+
+/* ── Section headers with color ── */
+.section-header h2 { position: relative !important; padding-left: 14px !important; }
+.section-header h2::before {
+  content: '' !important; position: absolute !important;
+  left: 0 !important; top: 2px !important; bottom: 2px !important;
+  width: 4px !important; border-radius: 2px !important;
+  background: linear-gradient(180deg, var(--c-amber), var(--c-orange)) !important;
+}
+
+/* ── Filter pill rainbow active states ── */
+.filter-pill.active {
+  background: linear-gradient(135deg, #1e293b, #334155) !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px rgba(15,23,42,.2) !important;
+}
+
+/* ── Modal header color ── */
+.modal-header { background: linear-gradient(180deg, #f8fafc, #f1f5f9) !important; }
+
+/* ── Timeline dot colors ── */
+.timeline-item::before {
+  background: linear-gradient(135deg, var(--c-amber), var(--c-orange)) !important;
+  border-color: #fff !important; box-shadow: 0 0 0 3px rgba(245,158,11,.15) !important;
+}
+
+/* ── Progress bars colorful ── */
+.progress-fill {
+  background: linear-gradient(90deg, var(--c-amber), var(--c-orange), var(--c-pink)) !important;
+  background-size: 200% 100% !important;
+  animation: shimmer 3s ease infinite !important;
+}
+
+/* ── Stage badge colors ── */
+.stage-completed {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0) !important;
+  color: #15803d !important;
+}
+.stage-in-progress {
+  background: linear-gradient(135deg, #fef3c7, #fde68a) !important;
+  color: #92400e !important;
+}
+.stage-pending {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe) !important;
+  color: #1e40af !important;
+}
+
+/* ── Tab bar accent ── */
+.tab.active::after { background: linear-gradient(90deg, var(--c-amber), var(--c-orange)) !important; height: 3px !important; }
+
+/* ── Alert panels gradient ── */
+.alert-panel {
+  background: linear-gradient(90deg, #fffbeb, #fff 85%) !important;
+  border-left-width: 4px !important;
+}
+.alert-panel.critical {
+  background: linear-gradient(90deg, #fef2f2, #fff 85%) !important;
+}
+
+/* ── Input focus glow (colored) ── */
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--c-amber) !important;
+  box-shadow: 0 0 0 3px rgba(245,158,11,.12), 0 1px 2px rgba(0,0,0,.04) !important;
+}
+
+/* ── Table header gradient ── */
+thead th {
+  background: linear-gradient(180deg, #f8fafc, #f1f5f9) !important;
+  border-bottom-width: 2px !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+/* ── Card hover glow ── */
+.card:hover {
+  border-color: var(--c-amber) !important;
+  box-shadow: 0 8px 25px rgba(245,158,11,.08), 0 2px 8px rgba(0,0,0,.04) !important;
+}
+
+/* ── Topbar breadcrumb icon ── */
+.topbar-breadcrumb::before {
+  content: '' !important;
+  display: inline-block !important;
+  width: 6px; height: 6px !important;
+  background: var(--c-amber) !important;
+  border-radius: 50% !important;
+  margin-right: 10px !important;
+  vertical-align: middle !important;
+  box-shadow: 0 0 8px rgba(245,158,11,.5) !important;
+}
+
+/* ── Smooth hover transitions on everything ── */
+.stat-card, .kpi-card, .chart-container, .table-container {
+  transition: all 250ms cubic-bezier(.4,0,.2,1) !important;
+}
+
+/* ── Stat value color accent ── */
+.stat-card .stat-value, .kpi-card .kpi-value {
+  background: linear-gradient(135deg, #1e293b, #334155) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* ── Dark mode vibrant overrides ── */
+@media (prefers-color-scheme: dark) {
+  body { background: linear-gradient(180deg, #09090b 0%, #0f172a 40%, #1a1a2e 100%) !important; background-attachment: fixed !important; }
+  .topbar { background: rgba(24,24,27,.9) !important; }
+  .sidebar { background: linear-gradient(180deg, #09090b 0%, #111827 50%, #0f172a 100%) !important; }
+  .sidebar-name { color: #f8fafc !important; }
+  .modal-header { background: linear-gradient(180deg, #18181b, #0f0f11) !important; }
+  thead th { background: linear-gradient(180deg, #1f1f23, #18181b) !important; }
+  tbody tr:nth-child(odd) td { background: rgba(255,255,255,.015) !important; }
+  tbody tr:hover td { background: rgba(245,158,11,.08) !important; }
+  .stat-card .stat-value, .kpi-card .kpi-value { -webkit-text-fill-color: #f8fafc !important; }
+  .section-header h2::before { background: linear-gradient(180deg, var(--c-amber), var(--c-orange)) !important; }
+  .card:hover { box-shadow: 0 8px 30px rgba(245,158,11,.1) !important; }
+  .alert-panel { background: linear-gradient(90deg, #451a03, #18181b 85%) !important; }
+  .alert-panel.critical { background: linear-gradient(90deg, #450a0a, #18181b 85%) !important; }
+}
+
+/* ── Animated shimmer ── */
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
