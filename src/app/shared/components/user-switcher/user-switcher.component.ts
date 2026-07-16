@@ -8,12 +8,12 @@ import { AppUser } from '../../../core/models';
   template: `
     <div class="user-bar">
       <div class="user-bar-left">
-        <span class="brand">◆ Bagmane D2</span>
-        <span style="color:var(--border);margin:0 8px">|</span>
-        <span style="font-size:0.8rem;color:var(--text-secondary)">Consultant Onboarding & Design Tracker</span>
+        <span class="brand-mark">Bagmane D2</span>
+        <span class="brand-sep"></span>
+        <span class="brand-subtitle">Consultant Onboarding & Design Tracker</span>
       </div>
       <div class="user-bar-right">
-        <select class="form-select" style="width:auto;min-width:220px;padding:6px 12px;font-size:0.8rem" [ngModel]="dataService.getCurrentUser().id" (ngModelChange)="switchUser($event)">
+        <select [ngModel]="dataService.getCurrentUser().id" (ngModelChange)="switchUser($event)" style="min-width:220px">
           <option value="USR-001">Rahul Sharma (Indent Raiser)</option>
           <option value="USR-002">Vikram Mehta (Design Head)</option>
           <option value="USR-003">Anjali Nair (Coordinator)</option>
@@ -32,10 +32,11 @@ import { AppUser } from '../../../core/models';
     </div>
   `,
   styles: [`
-    .user-bar { display: flex; justify-content: space-between; align-items: center; padding: 8px 24px; background: var(--bg-card); border-bottom: 1px solid var(--border); font-size: 0.85rem; }
-    .user-bar-left { display: flex; align-items: center; gap: 8px; }
-    .brand { font-weight: 700; color: var(--primary); font-size: 1rem; letter-spacing: 0.5px; }
-    .user-bar-right select { padding: 6px 12px !important; font-size: 0.8rem !important; }
+    .user-bar-right select {
+      height: 30px; padding: 0 8px; font-size: 12px;
+      border: 1px solid var(--color-border); border-radius: 6px;
+      background: var(--color-surface); color: var(--color-text-secondary);
+    }
   `]
 })
 export class UserSwitcherComponent {
