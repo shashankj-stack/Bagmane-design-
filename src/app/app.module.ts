@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { LoginComponent } from './modules/login/login.component';
 import { PortalHubComponent } from './modules/portal-hub/portal-hub.component';
 import { RaiseIndentComponent } from './modules/raise-indent/raise-indent.component';
 import { DesignHeadApprovalComponent } from './modules/design-head-approval/design-head-approval.component';
@@ -25,7 +26,7 @@ import { UserSwitcherComponent } from './shared/components/user-switcher/user-sw
 
 @NgModule({
   declarations: [
-    AppComponent, PortalHubComponent, RaiseIndentComponent,
+    AppComponent, LoginComponent, PortalHubComponent, RaiseIndentComponent,
     DesignHeadApprovalComponent, CoordinatorAssignmentComponent,
     ContractTeamMemberComponent, ContractHeadApprovalComponent,
     CobTrackerComponent, KickstartComponent, DesignDashboardComponent,

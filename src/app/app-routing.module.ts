@@ -16,8 +16,11 @@ import { ApprovalPortalsComponent } from './modules/approval-portals/approval-po
 import { SystemSettingsComponent } from './modules/system-settings/system-settings.component';
 import { SapIntegrationComponent } from './modules/sap-integration/sap-integration.component';
 
+import { LoginComponent } from './modules/login/login.component';
+
 const routes: Routes = [
-  { path: '', component: PortalHubComponent },
+  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'portal-hub', component: PortalHubComponent },
   { path: 'raise-indent', component: RaiseIndentComponent },
   { path: 'design-head-approval', component: DesignHeadApprovalComponent },
