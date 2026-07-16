@@ -76,8 +76,10 @@ import { AppUser } from '../../core/models';
         <div class="role-list">
           <div class="role-item" *ngFor="let u of users" (click)="loginAs(u)" [style.--accent]="u.color">
             <span class="dot" [style.background]="u.color">{{ u.icon }}</span>
-            <span class="rname">{{ u.name }}</span>
-            <span class="rrole">{{ u.roleLabel }}</span>
+            <div class="role-text">
+              <span class="rname">{{ u.name }}</span>
+              <span class="rrole">{{ u.roleLabel }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -154,17 +156,18 @@ import { AppUser } from '../../core/models';
 
     .role-list { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
     .role-item {
-      display: flex; align-items: center; gap: 8px; padding: 7px 10px;
+      display: flex; align-items: center; gap: 9px; padding: 8px 12px;
       border: 1px solid #f1f5f9; border-radius: 6px; cursor: pointer;
-      transition: all 0.15s; font-size: 0.76rem;
+      transition: all 0.15s;
     }
     .role-item:hover { border-color: var(--accent); background: #f8fafc; }
     .dot {
       width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center;
       justify-content: center; font-size: 0.6rem; font-weight: 700; color: #fff; flex-shrink: 0;
     }
-    .rname { font-weight: 600; color: #0f172a; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .rrole { color: #94a3b8; font-size: 0.68rem; display: none; }
+    .role-text { flex: 1; min-width: 0; }
+    .rname { font-weight: 600; color: #0f172a; font-size: 0.82rem; line-height: 1.2; }
+    .rrole { color: #94a3b8; font-size: 0.68rem; }
 
     @media (max-width: 900px) {
       .main-area { flex-direction: column; }
@@ -175,7 +178,6 @@ import { AppUser } from '../../core/models';
       .brand-stats { gap: 20px; }
       .login-side { padding: 20px 16px; align-items: flex-start; }
       .login-card { padding: 24px 20px; }
-      .rrole { display: inline; }
     }
 
     @media (prefers-color-scheme: dark) {
