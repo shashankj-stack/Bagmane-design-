@@ -46,10 +46,13 @@ import { IndentRequest } from '../../core/models';
         <button class="btn btn-outline btn-sm" (click)="viewDetails(indent)">View Details</button>
       </div>
       <!-- Action buttons in their own clear row -->
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;padding-top:12px;border-top:1px solid var(--border-light)">
-        <button class="btn btn-success" (click)="approve(indent)">Approve</button>
-        <button class="btn btn-danger" (click)="rejectPrompt(indent)">Reject</button>
-        <button class="btn btn-primary" (click)="sendToCoordinator(indent)">Send to Coordinator</button>
+      <div style="background:#1a3a5c;padding:16px;border-radius:8px;margin-top:8px">
+        <p style="color:#e8a817;font-weight:700;margin-bottom:10px">ACTIONS:</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <button class="btn btn-success btn-lg" (click)="approve(indent)">Approve</button>
+          <button class="btn btn-danger btn-lg" (click)="rejectPrompt(indent)">Reject</button>
+          <button class="btn btn-lg" style="background:#e8a817;color:#1a3a5c;font-weight:700" (click)="sendToCoordinator(indent)">Send to Coordinator</button>
+        </div>
       </div>
       <!-- Approval remarks -->
       <div *ngIf="activeAction === indent.indentId" style="margin-top:12px">
