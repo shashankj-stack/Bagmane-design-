@@ -166,7 +166,7 @@ import { AppUser } from '../../core/models';
       justify-content: center; font-size: 0.6rem; font-weight: 700; color: #fff; flex-shrink: 0;
     }
     .role-text { flex: 1; min-width: 0; }
-    .rname { font-weight: 600; color: #0f172a; font-size: 0.82rem; line-height: 1.2; }
+    .rname { display: block; font-weight: 600; color: #0f172a; font-size: 0.82rem; line-height: 1.2; }
     .rrole { color: #94a3b8; font-size: 0.68rem; }
 
     @media (max-width: 900px) {
