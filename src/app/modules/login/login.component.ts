@@ -6,62 +6,79 @@ import { AppUser } from '../../core/models';
 @Component({
   selector: 'app-login',
   template: `
-<div class="login">
-  <!-- LEFT BRAND PANEL -->
-  <div class="login-left">
-    <div class="login-left-inner">
-      <div class="logo-area">
-        <div class="logo-icon">
-          <svg width="52" height="52" viewBox="0 0 52 52">
-            <polygon points="26,2 32,18 48,18 35,28 40,46 26,35 12,46 17,28 4,18 20,18" fill="#C9950E" stroke="#C9950E" stroke-width="1"/>
-          </svg>
-        </div>
-        <h1>BAGMANE</h1>
-        <p>Design &amp; Consultant Tracker</p>
-      </div>
-      <div class="brand-tag">
-        <p>Streamlining consultant onboarding and design delivery across all Bagmane Group tech parks.</p>
-      </div>
-    </div>
+<div class="login-page">
+  <!-- TOP HEADER BAR -->
+  <div class="topbar">
+    <svg class="topbar-logo" width="140" height="42" viewBox="0 0 140 42">
+      <defs><linearGradient id="tg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f0c040"/><stop offset="100%" stop-color="#d4941a"/></linearGradient></defs>
+      <polygon points="8,4 30,4 36,25 19,40 2,25" fill="url(#tg)" opacity="1"/>
+      <polygon points="14,10 24,10 27,22 19,32 11,22" fill="#1a2240" opacity="0.9"/>
+      <text x="44" y="22" font-family="'Inter',sans-serif" font-weight="800" font-size="16" fill="#f0c040" letter-spacing="3">BAGMANE</text>
+      <text x="44" y="36" font-family="'Inter',sans-serif" font-weight="400" font-size="8" fill="#c4943c" letter-spacing="2">DESIGN PORTAL</text>
+    </svg>
   </div>
 
-  <!-- RIGHT LOGIN PANEL -->
-  <div class="login-right">
-    <div class="login-right-inner">
-      <h2>Welcome</h2>
-      <p class="subtitle">Enter your credentials to access the portal</p>
-
-      <div class="form-group">
-        <label>Email or Username</label>
-        <div class="input-wrap">
-          <svg class="input-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="7" r="3.5" stroke="#94a3b8" stroke-width="1.5"/><path d="M3 15c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <input type="text" [(ngModel)]="username" placeholder="Enter your email or username">
+  <!-- MAIN CONTENT -->
+  <div class="main-area">
+    <!-- LEFT BRANDING -->
+    <div class="brand-side">
+      <div class="brand-inner">
+        <div class="brand-logo-mark">
+          <svg width="64" height="64" viewBox="0 0 64 64">
+            <circle cx="32" cy="32" r="30" fill="none" stroke="#fff" stroke-width="0.8" opacity="0.3"/>
+            <circle cx="32" cy="32" r="26" fill="none" stroke="#fff" stroke-width="0.5" opacity="0.15"/>
+            <polygon points="32,4 38,18 52,18 40,28 46,44 32,34 18,44 24,28 12,18 26,18" fill="#f0c040" opacity="0.95"/>
+          </svg>
+        </div>
+        <h1 class="brand-title">Bagmane</h1>
+        <p class="brand-sub">Design &#183; Build &#183; Deliver</p>
+        <p class="brand-desc">Streamlining consultant onboarding and design delivery across all Bagmane Group tech parks. A unified platform for managing the complete design lifecycle.</p>
+        <div class="brand-stats">
+          <div class="bs"><span class="bs-num">20+</span><span>Tech Parks</span></div>
+          <div class="bs"><span class="bs-num">50+</span><span>Consultants</span></div>
+          <div class="bs"><span class="bs-num">7</span><span>Stages</span></div>
         </div>
       </div>
+    </div>
 
-      <div class="form-group">
-        <label>Password</label>
-        <div class="input-wrap">
-          <svg class="input-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="7" width="12" height="9" rx="1.5" stroke="#94a3b8" stroke-width="1.5"/><path d="M6 7V5a3 3 0 016 0v2" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <input [type]="showPwd ? 'text' : 'password'" [(ngModel)]="password" placeholder="Enter your password">
-          <svg class="toggle-pwd" (click)="showPwd=!showPwd" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 9s3-5 7-5 7 5 7 5-3 5-7 5-7-5-7-5z" stroke="#94a3b8" stroke-width="1.5"/><circle cx="9" cy="9" r="2.5" stroke="#94a3b8" stroke-width="1.5"/></svg>
+    <!-- RIGHT LOGIN CARD -->
+    <div class="login-side">
+      <div class="login-card">
+        <h2>Welcome</h2>
+        <p class="login-sub">Enter your credentials to access the portal</p>
+
+        <div class="field">
+          <label>Email or Username</label>
+          <div class="input-box">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="6" r="3" stroke="#94a3b8" stroke-width="1.3"/><path d="M3 13.5c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke="#94a3b8" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <input [(ngModel)]="username" placeholder="Enter your email or username">
+          </div>
         </div>
-      </div>
 
-      <div class="options-row">
-        <label class="remember"><input type="checkbox"> Remember me</label>
-        <a class="forgot">Forgot Password?</a>
-      </div>
+        <div class="field">
+          <label>Password</label>
+          <div class="input-box">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2.5" y="6" width="11" height="8.5" rx="1.5" stroke="#94a3b8" stroke-width="1.3"/><path d="M5 6V4a3 3 0 016 0v2" stroke="#94a3b8" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <input [type]="showPwd ? 'text' : 'password'" [(ngModel)]="password" placeholder="Enter your password">
+            <svg class="eye" (click)="showPwd=!showPwd" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8s2.5-4.5 6-4.5S14 8 14 8s-2.5 4.5-6 4.5S2 8 2 8z" stroke="#94a3b8" stroke-width="1.3"/><circle cx="8" cy="8" r="2" stroke="#94a3b8" stroke-width="1.3"/></svg>
+          </div>
+        </div>
 
-      <button class="signin-btn" (click)="signIn()">Sign In</button>
+        <div class="row">
+          <label class="remember"><input type="checkbox"> Remember me</label>
+          <a class="forgot">Forgot Password?</a>
+        </div>
 
-      <div class="divider"><span>or select a role directly</span></div>
+        <button class="signin" (click)="signIn()">Sign In</button>
 
-      <div class="role-grid">
-        <div class="role-card" *ngFor="let u of users" (click)="loginAs(u)" [style.--c]="u.color">
-          <span class="role-badge" [style.background]="u.color + '18'" [style.color]="u.color">{{ u.icon }}</span>
-          <span class="role-name">{{ u.name }}</span>
-          <span class="role-label">{{ u.roleLabel }}</span>
+        <div class="or"><span>or select a role directly</span></div>
+
+        <div class="role-list">
+          <div class="role-item" *ngFor="let u of users" (click)="loginAs(u)" [style.--accent]="u.color">
+            <span class="dot" [style.background]="u.color">{{ u.icon }}</span>
+            <span class="rname">{{ u.name }}</span>
+            <span class="rrole">{{ u.roleLabel }}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -69,112 +86,116 @@ import { AppUser } from '../../core/models';
 </div>
 `,
   styles: [`
-    .login { display: flex; min-height: 100vh; font-family: 'Inter', sans-serif; }
+    .login-page { display: flex; flex-direction: column; height: 100vh; overflow: hidden; font-family: 'Inter', sans-serif; }
 
-    /* ===== LEFT ===== */
-    .login-left {
-      flex: 0 0 42%; background: linear-gradient(170deg, #1a120b 0%, #2d1f13 30%, #3a2a1a 60%, #2d1f13 100%);
+    .topbar {
+      height: 54px; flex-shrink: 0; background: #1a100a;
+      display: flex; align-items: center; padding: 0 28px; gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .topbar-logo { flex-shrink: 0; }
+
+    .main-area { flex: 1; display: flex; min-height: 0; }
+
+    /* LEFT SIDE */
+    .brand-side {
+      flex: 0 0 45%; background: linear-gradient(160deg, #087E97 0%, #0a6f86 30%, #08667a 60%, #065d6e 100%);
       display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;
     }
-    .login-left::before {
-      content: ''; position: absolute; inset: 0; opacity: 0.03;
-      background: radial-gradient(circle at 30% 40%, #fff 1px, transparent 1px), radial-gradient(circle at 70% 60%, #fff 1px, transparent 1px);
-      background-size: 80px 80px, 100px 100px;
+    .brand-side::before {
+      content: ''; position: absolute; inset: 0; opacity: 0.04;
+      background: radial-gradient(circle at 30% 40%, #fff 1px, transparent 1px),
+                  radial-gradient(circle at 70% 60%, #fff 1px, transparent 1px);
+      background-size: 60px 60px;
     }
-    .login-left-inner { position: relative; z-index: 1; padding: 60px 55px; display: flex; flex-direction: column; justify-content: space-between; height: 100%; max-width: 460px; width: 100%; }
-    .logo-area { margin-top: 30px; }
-    .logo-icon { margin-bottom: 24px; }
-    .logo-icon svg { filter: drop-shadow(0 0 20px rgba(201,149,14,0.3)); }
-    .logo-area h1 { font-size: 2.4rem; font-weight: 800; color: #fff; margin: 0 0 8px; letter-spacing: 3px; }
-    .logo-area p { font-size: 0.92rem; color: rgba(255,255,255,0.55); margin: 0; font-weight: 400; }
-    .brand-tag { margin-top: auto; margin-bottom: 30px; }
-    .brand-tag p { font-size: 0.85rem; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 350px; margin: 0; }
+    .brand-inner { position: relative; z-index: 1; padding: 60px 55px; max-width: 480px; }
+    .brand-logo-mark { margin-bottom: 28px; }
+    .brand-title { font-size: 2.4rem; font-weight: 800; color: #fff; margin: 0 0 6px; letter-spacing: -0.5px; }
+    .brand-sub { font-size: 0.95rem; color: rgba(255,255,255,0.65); margin: 0 0 24px; font-weight: 400; }
+    .brand-desc { font-size: 0.85rem; color: rgba(255,255,255,0.42); line-height: 1.7; margin-bottom: 36px; }
+    .brand-stats { display: flex; gap: 36px; }
+    .bs { display: flex; flex-direction: column; gap: 2px; font-size: 0.7rem; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1px; }
+    .bs-num { font-size: 1.6rem; font-weight: 700; color: #f0c040; letter-spacing: 0; }
 
-    /* ===== RIGHT ===== */
-    .login-right {
-      flex: 1; display: flex; align-items: center; justify-content: center;
-      background: #f4f6f8; padding: 50px 40px; overflow-y: auto;
+    /* RIGHT SIDE */
+    .login-side { flex: 1; background: #f0f4f7; display: flex; align-items: center; justify-content: center; padding: 40px; overflow-y: auto; }
+    .login-card {
+      background: #fff; border-radius: 12px; box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      padding: 40px 36px; width: 100%; max-width: 480px;
     }
-    .login-right-inner { width: 100%; max-width: 440px; }
-    .login-right h2 { font-size: 1.6rem; font-weight: 700; color: #1a1a2e; margin: 0 0 4px; }
-    .subtitle { font-size: 0.88rem; color: #64748b; margin: 0 0 30px; }
-
-    .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 6px; }
-    .input-wrap {
-      display: flex; align-items: center; gap: 10px;
-      background: #fff; border: 1.5px solid #e2e8f0; border-radius: 8px;
-      padding: 0 14px; transition: all 0.2s;
+    .login-card h2 { font-size: 1.5rem; font-weight: 700; color: #0f172a; margin: 0 0 4px; }
+    .login-sub { font-size: 0.85rem; color: #64748b; margin: 0 0 28px; }
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: 0.78rem; font-weight: 600; color: #334155; margin-bottom: 5px; }
+    .input-box {
+      display: flex; align-items: center; gap: 8px; background: #f8fafc; border: 1.5px solid #e2e8f0;
+      border-radius: 6px; padding: 0 12px; transition: all 0.2s;
     }
-    .input-wrap:focus-within { border-color: #C9950E; box-shadow: 0 0 0 3px rgba(201,149,14,0.08); }
-    .input-wrap input {
-      flex: 1; border: none; outline: none; padding: 12px 0;
-      font-size: 0.9rem; font-family: 'Inter', sans-serif; color: #1a1a2e; background: transparent;
-    }
-    .input-wrap input::placeholder { color: #cbd5e1; }
-    .input-icon { flex-shrink: 0; }
-    .toggle-pwd { flex-shrink: 0; cursor: pointer; opacity: 0.5; transition: opacity 0.2s; }
-    .toggle-pwd:hover { opacity: 1; }
-
-    .options-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
-    .remember { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: #64748b; cursor: pointer; }
-    .remember input { width: 16px; height: 16px; accent-color: #C9950E; cursor: pointer; }
-    .forgot { font-size: 0.8rem; color: #C9950E; cursor: pointer; text-decoration: none; font-weight: 500; }
+    .input-box:focus-within { border-color: #087E97; box-shadow: 0 0 0 3px rgba(8,126,151,0.08); }
+    .input-box input { flex: 1; border: none; outline: none; background: transparent; padding: 10px 0; font-size: 0.88rem; font-family: 'Inter', sans-serif; color: #0f172a; }
+    .input-box input::placeholder { color: #cbd5e1; }
+    .eye { cursor: pointer; opacity: 0.4; transition: opacity 0.2s; flex-shrink: 0; }
+    .eye:hover { opacity: 0.8; }
+    .row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .remember { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: #64748b; cursor: pointer; }
+    .remember input { width: 15px; height: 15px; accent-color: #087E97; cursor: pointer; }
+    .forgot { font-size: 0.78rem; color: #087E97; cursor: pointer; font-weight: 500; }
     .forgot:hover { text-decoration: underline; }
-
-    .signin-btn {
-      width: 100%; padding: 13px; background: #C9950E; color: #fff; border: none;
-      border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer;
-      font-family: 'Inter', sans-serif; letter-spacing: 0.3px;
-      transition: all 0.2s; box-shadow: 0 2px 8px rgba(201,149,14,0.25);
+    .signin {
+      width: 100%; padding: 12px; background: #087E97; color: #fff; border: none;
+      border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+      font-family: 'Inter', sans-serif; transition: all 0.2s;
     }
-    .signin-btn:hover { background: #b8870c; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(201,149,14,0.35); }
+    .signin:hover { background: #076d84; }
 
-    .divider { display: flex; align-items: center; gap: 12px; margin: 28px 0 18px; }
-    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
-    .divider span { font-size: 0.73rem; color: #94a3b8; white-space: nowrap; }
+    .or { display: flex; align-items: center; gap: 10px; margin: 22px 0 14px; }
+    .or::before, .or::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
+    .or span { font-size: 0.7rem; color: #94a3b8; white-space: nowrap; }
 
-    .role-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
-    .role-card {
-      display: flex; align-items: center; gap: 9px; padding: 9px 12px;
-      background: #fff; border: 1px solid #e8ecf2; border-radius: 8px; cursor: pointer;
-      transition: all 0.15s;
+    .role-list { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .role-item {
+      display: flex; align-items: center; gap: 8px; padding: 7px 10px;
+      border: 1px solid #f1f5f9; border-radius: 6px; cursor: pointer;
+      transition: all 0.15s; font-size: 0.76rem;
     }
-    .role-card:hover { border-color: var(--c); background: #f9fafb; }
-    .role-badge {
-      width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center;
-      justify-content: center; font-size: 0.65rem; font-weight: 700; flex-shrink: 0;
+    .role-item:hover { border-color: var(--accent); background: #f8fafc; }
+    .dot {
+      width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 0.6rem; font-weight: 700; color: #fff; flex-shrink: 0;
     }
-    .role-name { font-size: 0.78rem; font-weight: 600; color: #1a1a2e; }
-    .role-label { display: none; }
+    .rname { font-weight: 600; color: #0f172a; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .rrole { color: #94a3b8; font-size: 0.68rem; display: none; }
 
     @media (max-width: 900px) {
-      .login { flex-direction: column; }
-      .login-left { flex: 0 0 auto; min-height: 180px; }
-      .login-left-inner { padding: 30px; }
-      .logo-area h1 { font-size: 1.6rem; }
-      .brand-tag { display: none; }
-      .login-right { padding: 30px 20px; }
-      .role-grid { grid-template-columns: repeat(2, 1fr); }
-      .role-label { display: inline; font-size: 0.68rem; color: #94a3b8; margin-left: auto; }
+      .main-area { flex-direction: column; }
+      .brand-side { flex: 0 0 auto; padding: 30px; min-height: 180px; }
+      .brand-inner { padding: 20px; }
+      .brand-title { font-size: 1.6rem; }
+      .brand-desc { display: none; }
+      .brand-stats { gap: 20px; }
+      .login-side { padding: 20px 16px; align-items: flex-start; }
+      .login-card { padding: 24px 20px; }
+      .rrole { display: inline; }
     }
 
     @media (prefers-color-scheme: dark) {
-      .login-right { background: #0f172a; }
-      .login-right h2 { color: #f1f5f9; }
-      .subtitle { color: #94a3b8; }
-      .form-group label { color: #cbd5e1; }
-      .input-wrap { background: #1e293b; border-color: #334155; }
-      .input-wrap input { color: #f1f5f9; }
-      .role-card { background: #1e293b; border-color: #334155; }
-      .role-card:hover { background: #253349; }
-      .role-name { color: #f1f5f9; }
-      .divider::before, .divider::after { background: #334155; }
+      .topbar { background: #0a0806; }
+      .login-side { background: #0f172a; }
+      .login-card { background: #1e293b; }
+      .login-card h2 { color: #f1f5f9; }
+      .login-sub { color: #94a3b8; }
+      .field label { color: #cbd5e1; }
+      .input-box { background: #0f172a; border-color: #334155; }
+      .input-box input { color: #f1f5f9; }
+      .role-item { border-color: #1e293b; }
+      .role-item:hover { background: #253349; }
+      .rname { color: #f1f5f9; }
+      .or::before, .or::after { background: #334155; }
     }
   `]
 })
 export class LoginComponent {
-  username = 'admin@bagmane.com';
+  username = '';
   password = '';
   showPwd = false;
 
@@ -182,52 +203,43 @@ export class LoginComponent {
     { id: 'USR-001', name: 'Rahul Sharma', role: 'IR', roleLabel: 'Indent Raiser', icon: 'IR', color: '#2563eb' },
     { id: 'USR-002', name: 'Vikram Mehta', role: 'DH', roleLabel: 'Design Head', icon: 'DH', color: '#16a34a' },
     { id: 'USR-003', name: 'Anjali Nair', role: 'COORD', roleLabel: 'Coordinator', icon: 'CO', color: '#7c3aed' },
-    { id: 'USR-004', name: 'Suresh Rao', role: 'CTM', roleLabel: 'Contract Team Member', icon: 'CT', color: '#ea580c' },
+    { id: 'USR-004', name: 'Suresh Rao', role: 'CTM', roleLabel: 'CTM', icon: 'CT', color: '#ea580c' },
     { id: 'USR-005', name: 'Deepak Shetty', role: 'CH', roleLabel: 'Contract Head', icon: 'CH', color: '#dc2626' },
     { id: 'USR-006', name: 'Management', role: 'MGMT', roleLabel: 'Management', icon: 'MG', color: '#475569' },
-    { id: 'USR-007', name: 'Kavita Rao', role: 'DTR', roleLabel: 'Design Team Reviewer', icon: 'DT', color: '#0891b2' },
-    { id: 'USR-008', name: 'Vikram Patel', role: 'EXT', roleLabel: 'External Consultant', icon: 'EC', color: '#d97706' },
+    { id: 'USR-007', name: 'Kavita Rao', role: 'DTR', roleLabel: 'Design Reviewer', icon: 'DT', color: '#0891b2' },
+    { id: 'USR-008', name: 'Vikram Patel', role: 'EXT', roleLabel: 'Consultant', icon: 'EC', color: '#d97706' },
     { id: 'USR-009', name: 'Rajesh Kumar', role: 'MEPH', roleLabel: 'MEP Head', icon: 'ME', color: '#ca8a04' },
     { id: 'USR-010', name: 'Sunil Joshi', role: 'PH', roleLabel: 'Project Head', icon: 'PH', color: '#6d28d9' },
     { id: 'USR-011', name: 'Meera Reddy', role: 'LH', roleLabel: 'Liaisoning Head', icon: 'LH', color: '#0d9488' },
     { id: 'USR-012', name: 'Arun Bagmane', role: 'MD', roleLabel: 'Managing Director', icon: 'MD', color: '#1e40af' },
-    { id: 'USR-013', name: 'Admin', role: 'ADMIN', roleLabel: 'System Administrator', icon: 'AD', color: '#6b7280' },
+    { id: 'USR-013', name: 'Admin', role: 'ADMIN', roleLabel: 'Admin', icon: 'AD', color: '#6b7280' },
   ];
 
   private roleRouteMap: Record<string, string> = {
     'USR-001': '/raise-indent', 'USR-002': '/design-head-approval', 'USR-003': '/coordinator-assignment',
     'USR-004': '/contract-team-member', 'USR-005': '/contract-head-approval', 'USR-006': '/cob-tracker',
-    'USR-007': '/deliverables-tracker', 'USR-008': '/consultant-upload',
-    'USR-009': '/approval-portals', 'USR-010': '/approval-portals', 'USR-011': '/approval-portals',
-    'USR-012': '/design-dashboard', 'USR-013': '/system-settings',
+    'USR-007': '/deliverables-tracker', 'USR-008': '/consultant-upload', 'USR-009': '/approval-portals',
+    'USR-010': '/approval-portals', 'USR-011': '/approval-portals', 'USR-012': '/design-dashboard',
+    'USR-013': '/system-settings',
   };
   private userMap: Record<string, AppUser> = {
-    'USR-001': { id: 'USR-001', name: 'Rahul Sharma', role: 'IR', email: 'rahul.sharma@bagmane.com', portalAccess: ['portal-1','portal-6','portal-7','portal-hub'] },
-    'USR-002': { id: 'USR-002', name: 'Vikram Mehta', role: 'DH', email: 'vikram.mehta@bagmane.com', portalAccess: ['portal-2','portal-6','portal-hub','approval-portals'] },
-    'USR-003': { id: 'USR-003', name: 'Anjali Nair', role: 'COORD', email: 'anjali.nair@bagmane.com', portalAccess: ['portal-3','portal-6','portal-hub'] },
-    'USR-004': { id: 'USR-004', name: 'Suresh Rao', role: 'CTM', email: 'suresh.rao@bagmane.com', portalAccess: ['portal-4','portal-6','portal-hub'] },
-    'USR-005': { id: 'USR-005', name: 'Deepak Shetty', role: 'CH', email: 'deepak.shetty@bagmane.com', portalAccess: ['portal-5','portal-6','portal-hub'] },
-    'USR-006': { id: 'USR-006', name: 'Management', role: 'MGMT', email: 'mgmt@bagmane.com', portalAccess: ['portal-6','portal-hub','design-dashboard','consultant-stage-tracker'] },
-    'USR-007': { id: 'USR-007', name: 'Kavita Rao', role: 'DTR', email: 'kavita.rao@bagmane.com', portalAccess: ['portal-hub','deliverables-tracker','design-dashboard'] },
-    'USR-008': { id: 'USR-008', name: 'Vikram Patel', role: 'EXT', email: 'vikram@artech.com', portalAccess: ['portal-hub','consultant-upload'] },
-    'USR-009': { id: 'USR-009', name: 'Rajesh Kumar', role: 'MEPH', email: 'rajesh.kumar@bagmane.com', portalAccess: ['portal-hub','approval-portals'] },
-    'USR-010': { id: 'USR-010', name: 'Sunil Joshi', role: 'PH', email: 'sunil.joshi@bagmane.com', portalAccess: ['portal-hub','approval-portals'] },
-    'USR-011': { id: 'USR-011', name: 'Meera Reddy', role: 'LH', email: 'meera.reddy@bagmane.com', portalAccess: ['portal-hub','approval-portals'] },
-    'USR-012': { id: 'USR-012', name: 'Arun Bagmane', role: 'MD', email: 'arun@bagmane.com', portalAccess: ['portal-hub','approval-portals','design-dashboard','cob-tracker'] },
-    'USR-013': { id: 'USR-013', name: 'Admin', role: 'ADMIN', email: 'admin@bagmane.com', portalAccess: ['portal-hub','system-settings'] },
-  };
+    'USR-001': { id:'USR-001', name:'Rahul Sharma', role:'IR', email:'rahul.sharma@bagmane.com', portalAccess:[] },
+    'USR-002': { id:'USR-002', name:'Vikram Mehta', role:'DH', email:'vikram.mehta@bagmane.com', portalAccess:[] },
+    'USR-003': { id:'USR-003', name:'Anjali Nair', role:'COORD', email:'anjali.nair@bagmane.com', portalAccess:[] },
+    'USR-004': { id:'USR-004', name:'Suresh Rao', role:'CTM', email:'suresh.rao@bagmane.com', portalAccess:[] },
+    'USR-005': { id:'USR-005', name:'Deepak Shetty', role:'CH', email:'deepak.shetty@bagmane.com', portalAccess:[] },
+    'USR-006': { id:'USR-006', name:'Management', role:'MGMT', email:'mgmt@bagmane.com', portalAccess:[] },
+    'USR-007': { id:'USR-007', name:'Kavita Rao', role:'DTR', email:'kavita.rao@bagmane.com', portalAccess:[] },
+    'USR-008': { id:'USR-008', name:'Vikram Patel', role:'EXT', email:'vikram@artech.com', portalAccess:[] },
+    'USR-009': { id:'USR-009', name:'Rajesh Kumar', role:'MEPH', email:'rajesh.kumar@bagmane.com', portalAccess:[] },
+    'USR-010': { id:'USR-010', name:'Sunil Joshi', role:'PH', email:'sunil.joshi@bagmane.com', portalAccess:[] },
+    'USR-011': { id:'USR-011', name:'Meera Reddy', role:'LH', email:'meera.reddy@bagmane.com', portalAccess:[] },
+    'USR-012': { id:'USR-012', name:'Arun Bagmane', role:'MD', email:'arun@bagmane.com', portalAccess:[] },
+    'USR-013': { id:'USR-013', name:'Admin', role:'ADMIN', email:'admin@bagmane.com', portalAccess:[] },
+  } as any;
 
   constructor(private router: Router, private dataService: DataService) {}
 
-  signIn() {
-    if (this.username && this.password) {
-      this.dataService.setCurrentUser(this.userMap['USR-001']);
-      this.router.navigate(['/raise-indent']);
-    }
-  }
-
-  loginAs(user: any) {
-    const appUser = this.userMap[user.id];
-    if (appUser) { this.dataService.setCurrentUser(appUser); this.router.navigate([this.roleRouteMap[user.id] || '/portal-hub']); }
-  }
+  signIn() { if(this.username) { this.dataService.setCurrentUser(this.userMap['USR-001']); this.router.navigate(['/raise-indent']); } }
+  loginAs(user: any) { const appUser = this.userMap[user.id]; if(appUser) { this.dataService.setCurrentUser(appUser); this.router.navigate([this.roleRouteMap[user.id] || '/portal-hub']); } }
 }
