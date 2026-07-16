@@ -41,13 +41,15 @@ import { IndentRequest } from '../../core/models';
         <div class="info-item"><span class="info-label">RFP Date</span><span class="info-value">{{ indent.rfpDate || '-' }}</span></div>
       </div>
       <div style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:12px;max-height:60px;overflow:hidden"><strong>Scope:</strong> {{ indent.scopeOfWork }}</div>
-      <div class="btn-group" style="justify-content:space-between;align-items:center">
+      <!-- View Details row -->
+      <div style="margin-bottom:12px">
         <button class="btn btn-outline btn-sm" (click)="viewDetails(indent)">View Details</button>
-        <div class="btn-group">
-          <button class="btn btn-success btn-sm" (click)="approve(indent)">Approve</button>
-          <button class="btn btn-danger btn-sm" (click)="rejectPrompt(indent)">Reject</button>
-          <button class="btn btn-primary btn-sm" (click)="sendToCoordinator(indent)">Send to Coordinator</button>
-        </div>
+      </div>
+      <!-- Action buttons in their own clear row -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;padding-top:12px;border-top:1px solid var(--border-light)">
+        <button class="btn btn-success" (click)="approve(indent)">Approve</button>
+        <button class="btn btn-danger" (click)="rejectPrompt(indent)">Reject</button>
+        <button class="btn btn-primary" (click)="sendToCoordinator(indent)">Send to Coordinator</button>
       </div>
       <!-- Approval remarks -->
       <div *ngIf="activeAction === indent.indentId" style="margin-top:12px">
