@@ -36,7 +36,7 @@ import { IndentRequest, ProposedConsultant, LineItem } from '../../core/models';
   <!-- Filter Bar -->
   <div class="filter-bar">
     <input class="form-input" placeholder="Search by Request ID or name..." [(ngModel)]="searchText" style="min-width:250px">
-    <select class="form-select" [(ngModel)]="categoryFilter"><option value="all">All Categories</option><option value="General">General</option><option value="Consultant Onboarding">Consultant Onboarding</option></select>
+    <select class="form-select" [(ngModel)]="categoryFilter"><option value="all">All Categories</option><option value="Consultant Onboarding">Consultant Onboarding</option></select>
     <select class="form-select" [(ngModel)]="statusFilter"><option value="all">All Statuses</option><option value="Draft">Draft</option><option value="Pending DH Review">Pending DH Review</option><option value="DH Approved">DH Approved</option><option value="Rejected">Rejected</option><option value="Indent Raised">Indent Raised</option><option value="Accepted">Accepted</option><option value="CH Rejected">CH Rejected</option><option value="Completed">Completed</option></select>
     <button class="btn btn-outline btn-sm" (click)="clearFilters()">Clear</button>
   </div>
@@ -52,7 +52,7 @@ import { IndentRequest, ProposedConsultant, LineItem } from '../../core/models';
       <tbody>
         <tr *ngFor="let indent of filteredIndents" [class.highlight]="indent.raisedBy === dataService.getCurrentUser().name">
           <td><strong>{{ indent.indentId }}</strong></td>
-          <td><span class="badge" [class.badge-info]="indent.category==='Consultant Onboarding'" [class.badge-light]="indent.category==='General'">{{ indent.category }}</span></td>
+          <td><span class="badge badge-info">{{ indent.category }}</span></td>
           <td>{{ indent.techPark }}</td>
           <td>{{ indent.buildingNames?.join(', ') }}</td>
           <td>{{ indent.consultantType || '-' }}</td>
@@ -121,11 +121,11 @@ import { IndentRequest, ProposedConsultant, LineItem } from '../../core/models';
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Category <span class="required">*</span></label>
-            <select class="form-select" [(ngModel)]="newIndent.category"><option value="">Select...</option><option value="General">General</option><option value="Consultant Onboarding">Consultant Onboarding</option></select>
+            <select class="form-select" [(ngModel)]="newIndent.category"><option value="Consultant Onboarding">Consultant Onboarding</option></select>
           </div>
           <div class="form-group">
-            <label class="form-label">Type of Consultant <span class="required" *ngIf="newIndent.category === 'Consultant Onboarding'">*</span></label>
-            <select class="form-select" [(ngModel)]="newIndent.consultantType" [disabled]="newIndent.category === 'General'">
+            <label class="form-label">Type of Consultant <span class="required">*</span></label>
+            <select class="form-select" [(ngModel)]="newIndent.consultantType">
               <option value="">Select...</option><option value="Architect">Architect</option><option value="Structural Engineer">Structural Engineer</option><option value="MEP Engineer">MEP Engineer</option><option value="Landscape Architect">Landscape Architect</option><option value="Interior Designer">Interior Designer</option><option value="Other">Other</option>
             </select>
           </div>
@@ -330,7 +330,7 @@ export class RaiseIndentComponent {
 
   getEmptyIndent() {
     return {
-      category: '', consultantType: '', techPark: '', buildingNames: [] as string[],
+      category: 'Consultant Onboarding', consultantType: '', techPark: '', buildingNames: [] as string[],
       numConsultantsRequired: 1, scopeOfWork: '', description: '', rfpDate: '',
       mgmtSignOn: false, mgmtSignOnDate: '',
       proposedConsultants: [{ firm: '', contact: '', phone: '', email: '', location: '' }],

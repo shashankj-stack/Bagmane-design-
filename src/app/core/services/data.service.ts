@@ -445,8 +445,8 @@ export class DataService {
         ctmAcceptedDateTime: '13-07-2026 04:00 PM'
       },
       {
-        indentId: 'CB-103', category: 'General', techPark: 'Bagmane Capital', buildingNames: ['South Wing'],
-        numConsultantsRequired: 3, scopeOfWork: 'General consultancy for interior fit-out, HVAC, and electrical systems.',
+        indentId: 'CB-103', category: 'Consultant Onboarding', techPark: 'Bagmane Capital', buildingNames: ['South Wing'],
+        consultantType: 'Interior Designer', numConsultantsRequired: 3, scopeOfWork: 'General consultancy for interior fit-out, HVAC, and electrical systems.',
         mgmtSignOn: true, mgmtSignOnDate: '14-07-2026', raisedBy: 'Rahul Sharma', requestDateTime: '14-07-2026 08:00 AM',
         status: 'Pending DH Review', proposedConsultants: [
           { firm: 'InteriorCraft Ltd', contact: 'Sneha Das', phone: '8899001122', email: 'sneha@interiorcraft.com', location: 'Bangalore' },
